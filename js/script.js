@@ -59,7 +59,7 @@
 // }
 
 
-'use strict';
+// 'use strict';
 
 
 let money = +prompt("Ваш бюджет на месяц?", ""),
