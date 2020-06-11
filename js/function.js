@@ -1,12 +1,12 @@
-// let num = 20
+let num = 20
 
-// function showFirstMessage(text) {
-//     alert(text);
-//     console.log(num);
-// }
+function showFirstMessage(text) {
+    alert(text);
+    console.log(num);
+}
 
-// showFirstMessage("Hellow world");
-// console.log(num);
+showFirstMessage("Hellow world");
+console.log(num);
 
 
 
@@ -27,7 +27,7 @@ let calc = (a, b) => { a + b }
 function retVar() {
     let num = 50;
     return num;
-}
+};
 
 let anotherNum = retVar();
 console.log(anotherNum);

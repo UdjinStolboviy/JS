@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 
 // let many = prompt("Ваш бюджет на месяц ?", ''),
@@ -59,11 +59,22 @@
 // }
 
 
-// 'use strict';
+'use strict'
+
+let money, time;
+
+function start() {
+    money = +prompt("Ваш бюджет на месяц?", '');
+        time = prompt("Введите дату в формате YYYY-MM-DD", "");
+
+    while (isNaN(maney) || maney == "" || money == null) {
+        money = +prompt("Ваш бюджет на месяц?", '');
+    }
+}
+
+start();
 
 
-let money = +prompt("Ваш бюджет на месяц?", ""),
-    time = prompt("Введите дату в формате YYYY-MM-DD", "");
 
 let appData = {
     budget: money,
@@ -74,22 +85,40 @@ let appData = {
     savings: false
 };
 
+function chooseExpensev() {
+    for (let i = 0; i < 2; i++) {
+        let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+            b = prompt("Во сколько обойдется?", "");
 
-for (let i = 0; i < 2; i++) {
-    let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
-        b = prompt("Во сколько обойдется?", "");
+        if (typeof (a) === 'string' && typeof (a) != null && typeof (b) != null && a != "" && b != "" && a.length < 50) {
 
-    if (typeof (a) === 'string' && typeof (a) != null && typeof (b) != null && a != "" && b != "" && a.length < 50) {
+            console.log("done");
 
-        console.log("done");
-
-        appData.expenses[a] = b;
-    } else {
-        console.log("bad result");
-        i--;
+            appData.expenses[a] = b;
+        } else {
+            console.log("bad result");
+            i--;
+        }
     }
+}
 
-};
+chooseExpensev();
+
+// for (let i = 0; i < 2; i++) {
+//     let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+//         b = prompt("Во сколько обойдется?", "");
+
+//     if (typeof (a) === 'string' && typeof (a) != null && typeof (b) != null && a != "" && b != "" && a.length < 50) {
+
+//         console.log("done");
+
+//         appData.expenses[a] = b;
+//     } else {
+//         console.log("bad result");
+//         i--;
+//     }
+
+// };
 
 
 
@@ -137,7 +166,7 @@ for (let i = 0; i < 2; i++) {
 // while(i < 2);
 
 
-appData.moneyPerDay = appData.budget / 30;
+appData.moneyPerDay = (appData.budget / 30).toFixed();
 
 
 alert("Бюджет на 1 день составляет " + appData.moneyPerDay + "руб.");
