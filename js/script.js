@@ -69,13 +69,33 @@ let appData = {
         }
     },
     chooseIncome: function () {
-        let items = prompt("Что принесет дополнительный доход? (перечслите через зяпятую)", "");
-        appData.income = items.split(', ');    // преводит  страку  в  масив split
-        appData.income.push(prompt('МОжет что то еще?'));  // добавляем  в конец масива  елемент полученый  от пользователя.
-        appData.income.sort(); // метод сортует  масив  по  алфовиту.
+        // let items = prompt("Что принесет дополнительный доход? (перечслите через зяпятую)", "");
+        for (let i = 0; i < 2; i++) {
+            let items = prompt("Что принесет дополнительный доход? (перечслите через зяпятую)", "");
+
+            if (typeof (items) === 'string' && typeof (items) != null && items) {
+
+                console.log("done");
+
+                appData.income = items.split(', ');
+                appData.income = items.split(', '); // преводит  страку  в  масив split
+                appData.income.push(prompt('МОжет что то еще?')); // добавляем  в конец масива  елемент полученый  от пользователя.
+                appData.income.sort(); // метод сортует  масив  по  алфовиту.
+                appData.income.forEach(function (item, a, mass) { // forEach метод для перебора  масива
+                    let b = a + 1;
+                    console.log("Способ доп. зароботка: " + b +"." + item)
+                });
+            } else {
+                console.log("bad result");
+                i--;
+            }
+        }
     }
 };
 
+for (let property in appData) {
+    console.log("Наша программа включает в себя данные:" + `${property}: ${appData[property]}`);
+}
 
 
 
