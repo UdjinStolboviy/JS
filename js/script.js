@@ -1,5 +1,6 @@
 'use strict'
 
+
 let money, time;
 
 function start() {
@@ -99,8 +100,7 @@ for (let property in appData) {
 
 
 
-
-
+ 
 
 
 
