@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Расчет дневного бюджета</h1>
+<div class="wrip">
+    <div class="container">
+        <div class="mein__expense">
+            <h2>Ведите обезательные расходы</h2>
+            <input class="expenses-item" type="text" id="expenses_1" placeholder="Найминование">
+            <input class="expenses-item" type="text" id="expenses_2" placeholder="Цена">
+            <input class="expenses-item" type="text" id="expenses_3" placeholder="Найминование">
+            <input class="expenses-item" type="text" id="expenses_4" placeholder="Цена">
+            <button id="expense_sure">Утвердить</button>
+        </div>
+        <div class="optional__expenses">
+            <h2>Ведите необезательные расходы</h2>
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <button id="opt_expensew">Утвердить</button>
+        </div>
+        <div class="daily__budget">
+            <h2>Расчет дневного бюджета</h2>
+            <button id="daily_budget">Расчитать</button>
+        </div>
+        <div class="income__possible">
+            <div class="articles__income">
+                <h2>Ведите статьи возможного дохода через запятую</h2>
+                <input type="text" id="inIncome">
+            </div>
+            <div class="accumulation">
+                <label for="Accumulation">Есть ли накопление  </label>
+                <input type="radio" id="Accumulation">
+            </div>
+            <div class="amout">
+                <div class="vrep">
+                    <label for="sum">Сумма  </label>
+                    <input class="choose-sum" id="sum" type="text">
+                </div>
+                <div class="vrep">
+                    <label for="percen">Процент  </label>
+                    <input class="percentage" id="percen" type="text">
+                </div>
+            </div>
+        </div>
+        <button id="btn_main-calc">Начать расчет</button>
+    </div>
+    <div class="container__inf">
+        <div class="info">
+            <div class="income">Доход:</div>
+            <div class="income-value"></div>
+            <div class="budget__on">бюджет на 1 день:</div>
+            <div class="income__level">Уровень дохода:</div>
+            <div class="mandatory__expenses">Обезательные расходы:</div>
+            <div class="possible__spending">Возможные траты:</div>
+            <div class="additional__income">Дополнительный доход:</div>
+            <div class="accumulation__month">Накопление за 1 месяц:</div>
+            <div class="accumulation__year">Накопление за 1 год:</div>
+        </div>
+        <div class="vrep">
+            <h3>Год:</h3>
+            <input class="year-value" type="text" readonly>
+        </div>
+        <div class="vrep">
+            <h3>Месяц:</h3>
+            <input class="month-value" type="text" readonly>
+        </div>
+        <div class="vrep">
+            <h3>День:</h3>
+            <input class="day-value" type="text" readonly>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

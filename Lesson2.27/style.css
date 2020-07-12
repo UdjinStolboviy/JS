@@ -1,0 +1,51 @@
+body {
+    background-color: cornsilk;
+}
+.wrip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 40px;
+}
+h2 {
+    text-align: center;
+}
+button {
+    display: block;
+    margin: 40px auto;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: peru;
+    color: white;
+    border: none;
+}
+
+label {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.articles__income {
+    margin: 30px;
+}
+
+#inIncome {
+    width: 100%;
+}
+
+.income, .budget__on, .income__level, .mandatory__expenses, .possible__spending, .additional__income ,.accumulation__month, .accumulation__year {
+    font-size: 20px;
+    font-weight: 900;
+    padding: 15px;
+}
+
+.accumulation, .vrep {
+    padding: 20px;
+}
+.expenses-item {
+    width: 48%;
+    margin-top: 10px ;
+}
