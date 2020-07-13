@@ -20,9 +20,9 @@
         </div>
         <div class="optional__expenses">
             <h2>Ведите необезательные расходы</h2>
-            <input type="text">
-            <input type="text">
-            <input type="text">
+            <input class="optionalexpenses-item" type="text" id="optionalexpenses_1">
+            <input class="optionalexpenses-item" type="text" id="optionalexpenses_2">
+            <input class="optionalexpenses-item" type="text" id="optionalexpenses_3">
             <button id="opt_expensew">Утвердить</button>
         </div>
         <div class="daily__budget">
@@ -32,11 +32,11 @@
         <div class="income__possible">
             <div class="articles__income">
                 <h2>Ведите статьи возможного дохода через запятую</h2>
-                <input type="text" id="inIncome">
+                <input class="choose-income" type="text" id="inIncome">
             </div>
             <div class="accumulation">
                 <label for="Accumulation">Есть ли накопление  </label>
-                <input type="radio" id="Accumulation">
+                <input type="checkbox" id="Accumulation">
             </div>
             <div class="amout">
                 <div class="vrep">
@@ -55,13 +55,27 @@
         <div class="info">
             <div class="income">Доход:</div>
             <div class="income-value"></div>
+
             <div class="budget__on">бюджет на 1 день:</div>
+            <div class="daybudget-value"></div>
+
             <div class="income__level">Уровень дохода:</div>
+            <div class="level-value"></div>
+
             <div class="mandatory__expenses">Обезательные расходы:</div>
+            <div class="expenses-value"></div>
+
             <div class="possible__spending">Возможные траты:</div>
+            <div class="optionalexpenses-value"></div>
+
             <div class="additional__income">Дополнительный доход:</div>
+            <div class="income-velue"></div>
+
             <div class="accumulation__month">Накопление за 1 месяц:</div>
+            <div class="monthsavings-value"></div>
+
             <div class="accumulation__year">Накопление за 1 год:</div>
+            <div class="yearsavings-value"></div>
         </div>
         <div class="vrep">
             <h3>Год:</h3>

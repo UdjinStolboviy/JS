@@ -5,9 +5,21 @@ let startBtn = document.getElementById("btn_main-calc"),
     dayValue = document.querySelector('.day-value'),
 
     expensesBtn = document.getElementsByTagName('button')[0],
-    expensesItem = document.getElementsByClassName('expenses-item');
-
-
+    expensesItem = document.getElementsByClassName('expenses-item'),
+    expensesValue = document.getElementsByClassName('expenses-value')[0],
+    optionalExpensesBtn = document.getElementsByTagName('button')[1],
+    optionalexpensesValue = document.getElementsByClassName('optionalexpenses-value')[0],
+    countBtn = document.getElementsByTagName('button')[2],
+    dayBudgetValue = document.getElementsByClassName('daybudget-value')[0],
+    levelValue = document.getElementsByClassName('level-value')[0],
+    incomeItem = document.querySelector('.choose-income'),
+    incomeValue = document.getElementsByClassName('income-velue')[0],
+    checkSavings = document.querySelector('#Accumulation'),
+    sumValue = document.querySelector('.choose-sum'),
+    percentValue = document.querySelector('.percentage'),
+    monthSavingsValue = document.getElementsByClassName('monthsavings-value')[0],
+    yearSavingsValue = document.getElementsByClassName('yearsavings-value')[0],
+    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item');
 let money, time;
 
 
@@ -34,14 +46,81 @@ expensesBtn.addEventListener('click', function () {
             b = expensesItem[++i].value;
         
         if ((typeof (a)) != null && (typeof (b)) != null && a != '' && a.length < 50){
+            console.log("Все верно");
             appData.expenses[a] = b;
             sum += +b;
         } else {
             i = i - 1;
         }
-        expensesValue.textContent = sum;
+    }
+    expensesValue.textContent = sum;
+});
+
+optionalExpensesBtn.addEventListener('click' ,function () {
+    for (let i = 0; i < optionalExpensesItem.length; i++){
+        let opt = optionalExpensesItem[i].value;
+        appData.optionalExpenses[i] = opt;
+        optionalexpensesValue.textContent += appData.optionalExpenses[i] + ' ';
     }
 });
+
+countBtn.addEventListener('click', function () {
+    if (appData.budget != undefined) {
+        let expe = +expensesValue.textContent;
+        appData.moneyPerDay = ((appData.budget-expe) / 30).toFixed();
+        dayBudgetValue.textContent = appData.moneyPerDay;
+        if (appData.moneyPerDay < 100) {
+            levelValue.textContent = "Минимальный уровень достатка";
+        } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+            levelValue.textContent = 'Средний уровень достатка';
+        } else if (appData.moneyPerDay > 2000) {
+            levelValue.textContent = 'Высокий уровень достатка';
+        } else {
+            levelValue.textContent = 'Произощла ошибка';
+        }
+    } else {
+        dayBudgetValue.textContent = 'Произощла ошибка';
+    }
+});
+
+incomeItem.addEventListener('input', function () {
+    let items = incomeItem.value;
+    appData.income = items.split(', ');
+    incomeValue.textContent = appData.income;
+});
+
+checkSavings.addEventListener('click', function () {
+    if (appData.savings == true) {
+        appData.savings = false;
+    } else {
+        appData.savings = true;
+    }
+});
+
+sumValue.addEventListener('input', function () {
+    if (appData.savings == true) {
+        let sum = +sumValue.value,
+            percent = +percentValue.value;
+        appData.monthIncome = sum / 100 / 12 * percent;
+        appData.yearIncome = sum / 100 * percent;
+
+        monthSavingsValue.textContent = appData.monthIncome.toFixed(1);
+        yearSavingsValue.textContent = appData.yearIncome.toFixed(1);
+    }
+});
+
+percentValue.addEventListener('input', function () {
+    if (appData.savings == true) {
+        let sum = +sumValue.value,
+            percent = +percentValue.value;
+        appData.monthIncome = sum / 100 / 12 * percent;
+        appData.yearIncome = sum / 100 * percent;
+
+        monthSavingsValue.textContent = appData.monthIncome.toFixed(1);
+        yearSavingsValue.textContent = appData.yearIncome.toFixed(1);
+    }
+});
+
 
 const appData = {
     budget: money,
